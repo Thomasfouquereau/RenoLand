@@ -127,22 +127,34 @@
 }
 
 @media screen and (max-width: 1064px) {
-    .navbar-links,.navbar-btn {
+    .navbar-box {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .navbar-links {
         display: none;
     }
 
     .navbar-btn-mobile {
         display: block;
     }
+    
+}
 
-    .navbar-box {
-        justify-content: space-between;
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .navbar-btn {
-        margin-left: 40px;
+    .navbar-btn{
+        display: none;
     }
 }
+
+
 
 
 /*mobile nav bar*/
@@ -163,9 +175,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 17px 20px;
     background-color: #1E1E1E;
     margin-bottom: 30px;
+    align-items: center;
 }
 
 .mobile-close-btn{
@@ -200,13 +213,29 @@
     height: 100%;
 }
 
-.mobile-navbar-links li {
+.mobile-navbar-links a {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.mobile-navbar-links li::after {
+.mobile-navbar-links li{
+    transform: translateY(0px);
+    transition: cubic-bezier(0.165, 0.82,0.075 , 1) 1.5s;
+}
+
+.mobile-navbar-links li:hover{
+    transform: translateY(10px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
+}
+
+.mobile-navbar-links a:hover::after{
+    width: 50%;
+    transform: translateY(-10px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
+}
+
+.mobile-navbar-links a::after {
     content: "";
     display: block;
     width: 100%;
@@ -214,6 +243,7 @@
     box-shadow: #fff 0px 2px 5px;
     background-color: #fff;
     margin-top: 10px;
+    transition: cubic-bezier(0.165, 0.82,0.075 , 1) 1.5s;
 }
 
 .mobile-navbar-btn{
@@ -235,6 +265,14 @@
     box-shadow: inset 5px 5px 8px #b5bfcc,
         inset -5px -5px 8px #ffffff;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s;
+}
+
+@media screen and (min-width: 550px) {
+    .mobile-navbar-links a {
+        font-size: 2.3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 }
 
 /* footer */
