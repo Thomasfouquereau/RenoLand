@@ -1,3 +1,20 @@
+//LOADER  
+
+const loader = document.querySelector('.loader-div');
+
+gsap.to(loader, {
+  duration: 0.5,
+  scale: 0,
+  ease: 'power2.inOut',
+  delay: 2
+});
+
+setTimeout(() => {
+  loader.style.display = 'none';
+}, 2500);
+
+//HEADER
+
 const nomImg = [
   {
     id: 0,
@@ -45,21 +62,7 @@ changerOffre();
 
 setInterval(changerOffre, 10000);
 
-
-
-const loader = document.querySelector('.loader-div');
-
-gsap.to(loader, {
-  duration: 0.5,
-  scale: 0,
-  ease: 'power2.inOut',
-  delay: 2
-});
-
-setTimeout(() => {
-  loader.style.display = 'none';
-}, 2500);
-
+//CLIENTS CAROUSEL
 
 const nameClient = document.querySelector('.content-name');
 const layout = document.querySelector('.content-layout');
@@ -109,16 +112,16 @@ previewImg3.src = client[1].url;
 
 function changerClient() {
   const tl = gsap.timeline({
-    defaults: { duration: 0.7, ease: Power0.easeOut }
+    defaults: { duration: 0.5, ease: Power0.easeOut }
   });
 
   // Animation de sortie
-  tl.to(nameClient, { opacity: 0 }, "<0");
-  tl.to(layout, { opacity: 0 }, "<0");
-  tl.to(previewImg, { opacity: 0.5 }, "<0");
-  tl.to(previewImg1, { opacity: 0.5 }, "<0");
-  tl.to(previewImg2, { opacity: 0.5 }, "<0");
-  tl.to(previewImg3, { opacity: 0.5 }, "<0");
+  tl.to(nameClient, { opacity: 0 }, "<0.15");
+  tl.to(layout, { opacity: 0 }, "<0.15");
+  tl.to(previewImg, { opacity: 0 }, "<0.21");
+  tl.to(previewImg1, { opacity: 0 }, "<0.14");
+  tl.to(previewImg2, { opacity: 0 }, "<0.07");
+  tl.to(previewImg3, { opacity: 0 }, "<0");
 
   tl.call(() => {
     // Met à jour le client affiché
@@ -145,9 +148,9 @@ function changerClient() {
   // Animation d'entrée
   tl.to(nameClient, { opacity: 1 }, "<0");
   tl.to(layout, { opacity: 1 }, "<0");
-  tl.to(previewImg, { opacity: 1 }, "<0");
-  tl.to(previewImg1, { opacity: 1 }, "<0");
-  tl.to(previewImg2, { opacity: 1 }, "<0");
+  tl.to(previewImg, { opacity: 1 }, "<0.21");
+  tl.to(previewImg1, { opacity: 1 }, "<0.14");
+  tl.to(previewImg2, { opacity: 1 }, "<0.07");
   tl.to(previewImg3, { opacity: 1 }, "<0");
 }
 

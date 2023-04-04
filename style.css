@@ -559,8 +559,12 @@ main {
     margin-bottom: 100px;
 }
 
+.section-container a {
+    width: 100%;
+}
+
 .section-card {
-    width: 30%;
+    width: 90%;
     height: 100%;
     position: relative;
     border-radius: 10px;
@@ -570,12 +574,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.3s;
 }
 
 .section-card:hover {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.442);
+    transform: scale(1.05);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.3s;
 }
 
 .card-bg {
